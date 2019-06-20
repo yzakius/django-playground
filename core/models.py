@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+DECK_CHOICES = (('B', 'Black'), ('W', 'White'), ('R', 'Red'), ('G', 'Green'), ('BU', 'Blue'))
 
 class Plane(models.Model):
     name = models.CharField(max_length=150)
@@ -25,3 +26,11 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Deck(models.Model):
+    name = models.CharField(max_length=30)
+    type = models.CharField(max_length=2, default='B', choices=DECK_CHOICES)
+
+    def __str__(self):
+        return self.name
