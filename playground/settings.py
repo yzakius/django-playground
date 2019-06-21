@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'rest_framework',
-    'rolepermissions',
+    'guardian',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +72,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'playground.wsgi.application'
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',  # default
+    'guardian.backends.ObjectPermissionBackend',
+)
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
