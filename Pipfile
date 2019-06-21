@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 django-role-permissions = "*"
+django-guardian = "*"
 
 [requires]
 python_version = "3.7"
